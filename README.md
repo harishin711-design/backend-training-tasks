@@ -1,7 +1,7 @@
 # Backend Training Tasks
 
 ## Project Overview
-This project contains backend training tasks implemented using Node.js and Express.js.
+This project contains backend training tasks implemented using Node.js, Express.js, MongoDB, and Mongoose.
 
 ---
 
@@ -19,11 +19,13 @@ Create a simple Node.js application and print a message in the console.
 - app.js
 
 ## Execution
+
 ```bash
 node app.js
 ```
 
 ## Output
+
 ```bash
 Backend training started successfully!
 ```
@@ -39,22 +41,15 @@ Create, write, and read a file using the fs module.
 - Core modules
 - fs module
 - File handling operations
-- Asynchronous callbacks
 
 ## Files Used
 - fileSystem.js
 - sample.txt
 
 ## Execution
+
 ```bash
 node fileSystem.js
-```
-
-## Output
-```bash
-File created and data written successfully.
-File content:
-Hello from Node.js File System Module!
 ```
 
 ---
@@ -62,26 +57,19 @@ Hello from Node.js File System Module!
 # Day 3 - HTTP Module
 
 ## Objective
-Create a basic HTTP server and handle requests and responses.
+Create a basic HTTP server.
 
 ## Concepts Covered
 - HTTP module
-- Server creation
-- Request handling
-- Response handling
-- Port listening
+- Request and response handling
 
 ## File Used
 - server.js
 
 ## Execution
+
 ```bash
 node server.js
-```
-
-## Output
-```bash
-Server is running on http://localhost:3000
 ```
 
 ---
@@ -89,30 +77,20 @@ Server is running on http://localhost:3000
 # Day 4 - Introduction to Express.js
 
 ## Objective
-Create a basic Express.js server with a root endpoint.
+Create a basic Express server with a root endpoint.
 
 ## Concepts Covered
 - Express.js framework
-- Express server setup
-- Root endpoint handling
+- Server setup
+- Routing basics
 
 ## File Used
 - expressServer.js
 
 ## Execution
+
 ```bash
 node expressServer.js
-```
-
-OR
-
-```bash
-npm run express
-```
-
-## Output
-```bash
-Express server running on http://localhost:3000
 ```
 
 ---
@@ -123,49 +101,139 @@ Express server running on http://localhost:3000
 Create product-related routes using Express.js.
 
 ## Concepts Covered
-- Routing
-- GET requests
+- GET routes
 - Route parameters
 - JSON responses
-- Status codes
 
 ## File Used
 - productRoutes.js
 
-## Routes Implemented
+## Routes
 
 ### Get All Products
+
 ```http
 GET /products
 ```
 
 ### Get Product By ID
+
 ```http
 GET /products/:id
 ```
 
 ## Execution
+
 ```bash
 node productRoutes.js
 ```
 
-## Example Response
+---
 
-### Get All Products
-```json
-[
-  { "id": 1, "name": "Laptop" },
-  { "id": 2, "name": "Mobile" },
-  { "id": 3, "name": "Headphones" }
-]
+# Day 6 - Middleware
+
+## Objective
+Implement custom middleware for request logging.
+
+## Concepts Covered
+- Middleware
+- Request tracking
+- next() function
+
+## File Used
+- middlewareServer.js
+
+## Execution
+
+```bash
+node middlewareServer.js
 ```
 
-### Get Product By ID
-```json
-{
-  "id": 1,
-  "name": "Laptop"
-}
+---
+
+# Day 7 - Mini Product API
+
+## Objective
+Build a simple Product API without database.
+
+## Concepts Covered
+- REST API basics
+- GET method
+- POST method
+- JSON handling
+
+## File Used
+- miniProductAPI.js
+
+## Routes
+
+### Get Products
+
+```http
+GET /products
+```
+
+### Add Product
+
+```http
+POST /products
+```
+
+## Execution
+
+```bash
+node miniProductAPI.js
+```
+
+---
+
+# Day 8 - MongoDB Basics
+
+## Objective
+Setup MongoDB and create ecommerce database.
+
+## Concepts Covered
+- NoSQL database
+- Collections
+- Documents
+- MongoDB Shell
+
+## Commands Used
+
+```javascript
+use ecommerce
+```
+
+```javascript
+db.products.insertOne({
+  name: "Laptop",
+  price: 50000
+})
+```
+
+```javascript
+db.products.find()
+```
+
+---
+
+# Day 9 - Mongoose
+
+## Objective
+Create a Product schema using Mongoose.
+
+## Concepts Covered
+- Mongoose
+- Schema creation
+- Model creation
+
+## File Used
+- productModel.js
+
+## Execution
+
+```bash
+node productModel.js
 ```
 
 ---
@@ -174,6 +242,8 @@ node productRoutes.js
 
 - Node.js
 - Express.js
+- MongoDB
+- Mongoose
 - JavaScript
 
 ---

@@ -1,1 +1,0 @@
-console.log("Backend training started successfully!");

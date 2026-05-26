@@ -265,7 +265,26 @@ node miniProductAPI.js
   }
 }
 ```
+# Day 8 - MongoDB Basics
 
+## Objective
+Setup MongoDB and create an ecommerce database.
+
+## Concepts Covered
+- NoSQL database
+- Collections and documents
+- MongoDB shell commands
+
+## Commands Used
+
+```bash
+mongosh
+use ecommerce
+db.products.insertOne({
+  name: "Laptop",
+  price: 50000
+})
+db.products.find()
 ---
 
 # Author

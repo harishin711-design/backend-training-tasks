@@ -1,7 +1,7 @@
 # Backend Training Tasks
 
 ## Project Overview
-This project contains backend training tasks implemented using Node.js, Express.js, MongoDB, and Mongoose.
+This project contains backend training tasks implemented using Node.js, Express.js, MongoDB, Mongoose, JWT Authentication, and REST APIs.
 
 ---
 
@@ -13,7 +13,7 @@ Create a simple Node.js application and print a message in the console.
 ## Concepts Covered
 - Backend basics
 - Node.js runtime
-- Project initialization using npm
+- npm initialization
 
 ## File Used
 - app.js
@@ -24,23 +24,17 @@ Create a simple Node.js application and print a message in the console.
 node app.js
 ```
 
-## Output
-
-```bash
-Backend training started successfully!
-```
-
 ---
 
 # Day 2 - Node.js Modules & File System
 
 ## Objective
-Create, write, and read a file using the fs module.
+Create, write, and read a file using Node.js fs module.
 
 ## Concepts Covered
-- Core modules
-- fs module
-- File handling operations
+- File System module
+- File handling
+- Read/Write operations
 
 ## Files Used
 - fileSystem.js
@@ -77,10 +71,10 @@ node server.js
 # Day 4 - Introduction to Express.js
 
 ## Objective
-Create a basic Express server with a root endpoint.
+Create a basic Express.js server.
 
 ## Concepts Covered
-- Express.js framework
+- Express framework
 - Server setup
 - Routing basics
 
@@ -103,7 +97,7 @@ Create product-related routes using Express.js.
 ## Concepts Covered
 - GET routes
 - Route parameters
-- JSON responses
+- JSON response handling
 
 ## File Used
 - productRoutes.js
@@ -158,8 +152,7 @@ Build a simple Product API without database.
 
 ## Concepts Covered
 - REST API basics
-- GET method
-- POST method
+- GET and POST methods
 - JSON handling
 
 ## File Used
@@ -193,10 +186,10 @@ node miniProductAPI.js
 Setup MongoDB and create ecommerce database.
 
 ## Concepts Covered
-- NoSQL database
+- NoSQL concepts
 - Collections
 - Documents
-- MongoDB Shell
+- MongoDB shell
 
 ## Commands Used
 
@@ -220,7 +213,7 @@ db.products.find()
 # Day 9 - Mongoose
 
 ## Objective
-Create a Product schema using Mongoose.
+Create Product schema using Mongoose.
 
 ## Concepts Covered
 - Mongoose
@@ -238,18 +231,176 @@ node productModel.js
 
 ---
 
+# Day 10 - CRUD Operations
+
+## Objective
+Implement CRUD APIs for products.
+
+## Concepts Covered
+- Create API
+- Read API
+- Update API
+- Delete API
+
+## File Used
+- crudProductAPI.js
+
+## Routes
+
+### Create Product
+
+```http
+POST /products
+```
+
+### Get Products
+
+```http
+GET /products
+```
+
+### Update Product
+
+```http
+PUT /products/:id
+```
+
+### Delete Product
+
+```http
+DELETE /products/:id
+```
+
+## Execution
+
+```bash
+node crudProductAPI.js
+```
+
+---
+
+# Day 11 - User Module
+
+## Objective
+Create user schema and model.
+
+## Concepts Covered
+- User schema design
+- Model creation
+- Required fields
+
+## File Used
+- userModel.js
+
+## Execution
+
+```bash
+node userModel.js
+```
+
+---
+
+# Day 12 - Authentication
+
+## Objective
+Implement user registration and login APIs using bcrypt.
+
+## Concepts Covered
+- Password hashing
+- User authentication
+- bcryptjs
+
+## File Used
+- authServer.js
+
+## Routes
+
+### Register User
+
+```http
+POST /register
+```
+
+### Login User
+
+```http
+POST /login
+```
+
+## Execution
+
+```bash
+node authServer.js
+```
+
+---
+
+# Day 13 - JWT Authentication
+
+## Objective
+Implement JWT authentication and secure routes.
+
+## Concepts Covered
+- JWT token generation
+- Middleware authentication
+- Protected routes
+
+## File Used
+- jwtAuthServer.js
+
+## Routes
+
+### Login and Generate Token
+
+```http
+POST /login
+```
+
+### Protected Route
+
+```http
+GET /protected
+```
+
+## Execution
+
+```bash
+node jwtAuthServer.js
+```
+
+---
+
+# Day 14 - Mini Project
+
+## Deliverable
+Complete backend mini project with:
+- Product CRUD APIs
+- MongoDB integration
+- User authentication
+- JWT security
+- Protected routes
+
+## Features
+- Express.js server
+- MongoDB database
+- Mongoose models
+- bcrypt password hashing
+- JWT authentication
+- REST APIs
+
+---
+
 # Technologies Used
 
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
+- bcryptjs
+- JSON Web Token (JWT)
 - JavaScript
 
 ---
----
-
-
 
 # Author
 

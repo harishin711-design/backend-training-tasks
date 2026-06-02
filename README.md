@@ -401,7 +401,266 @@ Complete backend mini project with:
 - JavaScript
 
 ---
+# Week 3 - eCommerce Backend Development
+
+## Goal
+Develop a scalable eCommerce backend system using Node.js, Express.js, MongoDB, and Mongoose.
+
+---
+
+## Project Structure
+
+```text
+backend-task/
+│
+├── config/
+│   └── db.js
+│
+├── controllers/
+│   ├── categoryController.js
+│   └── productController.js
+│
+├── middleware/
+│   └── authMiddleware.js
+│
+├── models/
+│   ├── category.js
+│   ├── product.js
+│   └── user.js
+│
+├── routes/
+│   ├── categoryRoutes.js
+│   └── productRoutes.js
+│
+├── app.js
+├── package.json
+└── README.md
+```
+
+---
+
+# Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcryptjs
+
+---
+
+# Day 15 - Project Architecture
+
+Created a scalable folder structure:
+
+- controllers/
+- models/
+- routes/
+- middleware/
+- config/
+
+---
+
+# Day 16 - Categories Module
+
+## Create Category
+
+### POST /categories
+
+Request:
+
+```json
+{
+  "name": "Laptops"
+}
+```
+
+Response:
+
+```json
+{
+  "_id": "category_id",
+  "name": "Laptops"
+}
+```
+
+---
+
+## Get Categories
+
+### GET /categories
+
+Response:
+
+```json
+[
+  {
+    "_id": "category_id",
+    "name": "Laptops"
+  }
+]
+```
+
+---
+
+# Day 17 - Product Module Enhancement
+
+## Product Model
+
+```javascript
+{
+  name: String,
+  price: Number,
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Category"
+  }
+}
+```
+
+---
+
+## Create Product
+
+### POST /products
+
+Request:
+
+```json
+{
+  "name": "Laptop",
+  "price": 50000,
+  "category": "category_id"
+}
+```
+
+Response:
+
+```json
+{
+  "_id": "product_id",
+  "name": "Laptop",
+  "price": 50000
+}
+```
+
+---
+
+## Get Products
+
+### GET /products
+
+Response:
+
+```json
+[
+  {
+    "_id": "product_id",
+    "name": "Laptop",
+    "price": 50000,
+    "category": {
+      "_id": "category_id",
+      "name": "Laptops"
+    }
+  }
+]
+```
+
+---
+
+# Pagination
+
+### GET /products?page=1&limit=5
+
+Example:
+
+```http
+GET http://localhost:3000/products?page=1&limit=5
+```
+
+Features:
+- Page-wise product listing
+- Limit number of records returned
+- Better performance for large datasets
+
+---
+
+# Authentication Features
+
+Implemented:
+
+- User Registration
+- User Login
+- Password Hashing using bcryptjs
+- JWT Token Generation
+- Protected Routes using JWT Middleware
+
+---
+
+# Database Integration
+
+MongoDB Atlas connected successfully using Mongoose.
+
+Features:
+- Categories Collection
+- Products Collection
+- Users Collection
+- Relationship between Products and Categories
+
+---
+
+# Completed Tasks
+
+## Week 2
+
+- CRUD Operations
+- User Model
+- Authentication
+- JWT Authentication
+- Mini Project
+
+## Week 3
+
+### Day 15
+- Project Architecture Setup
+
+### Day 16
+- Categories Module
+
+### Day 17
+- Product Module Enhancement
+- Category Reference
+- Pagination
+
+---
+
+# Run Project
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start server:
+
+```bash
+node app.js
+```
+
+Output:
+
+```bash
+MongoDB Connected
+Server running on port 3000
+```
+
+---
 
 # Author
 
 Harish Kumar
+
+Backend Training Tasks
+

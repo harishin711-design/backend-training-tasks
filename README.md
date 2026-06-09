@@ -634,6 +634,29 @@ Features:
 - Pagination
 
 ---
+# Day 18 - Cart Module
+
+## Features
+- Create Cart
+- Get Cart
+- User and Product References
+
+## APIs
+
+POST /cart
+GET /cart
+
+# Day 19 - Order Module
+
+## Features
+- Create Order
+- Get Orders
+- Order Schema with User and Products
+
+## APIs
+
+POST /order
+GET /orders
 
 # Run Project
 

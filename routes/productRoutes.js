@@ -6,7 +6,18 @@ const {
   getProducts
 } = require("../controllers/productController");
 
-router.post("/products", createProduct);
-router.get("/products", getProducts);
+const authMiddleware = require("../middleware/authMiddleware");
+const adminMiddleware = require("../middleware/adminMiddleware");
+
+// ADMIN ONLY
+router.post(
+  "/",
+  authMiddleware,
+  adminMiddleware,
+  createProduct
+);
+
+// PUBLIC (or user/admin both can view)
+router.get("/", getProducts);
 
 module.exports = router;

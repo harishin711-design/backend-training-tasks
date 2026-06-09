@@ -653,6 +653,38 @@ GET /cart
 - Get Orders
 - Order Schema with User and Products
 
+# Day 20 - Role-Based Access Control (RBAC)
+
+## Features
+- User Roles (Admin / User)
+- JWT Authentication with Role
+- Admin-only Route Protection
+- Middleware-based Authorization
+
+## Role System
+- user → can access cart, orders, and view products
+- admin → can create, update, delete products
+
+## Middleware
+- authMiddleware → verifies JWT token
+- adminMiddleware → checks user role and allows only admin access
+
+## Protected Routes
+- POST /products → Admin only
+- GET /products → Public access
+
+## Authentication Flow
+- User logs in and receives JWT token
+- Token contains user role (admin/user)
+- Token is sent in request header:
+  Authorization: Bearer <token>
+- Middleware verifies token and role before allowing access
+
+## Outcome
+- Implemented Role-Based Access Control (RBAC)
+- Secured admin-only routes
+- Added middleware-based authorization system
+
 ## APIs
 
 POST /order

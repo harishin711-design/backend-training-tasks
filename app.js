@@ -4,6 +4,16 @@ console.log("APP FILE LOADED");
 
 require("./config/db");
 
+require("./models/user");
+require("./models/product");
+require("./models/category");
+require("./models/cart");
+require("./models/order");
+
+const mongoose = require("mongoose");
+
+console.log("Registered Models:", mongoose.modelNames());
+
 const app = express();
 
 app.use(express.json());
@@ -16,6 +26,13 @@ app.get("/test", (req, res) => {
 // Routes
 app.use("/", require("./routes/categoryRoutes"));
 app.use("/", require("./routes/productRoutes"));
+app.use("/", require("./routes/cartRoutes"));
+
+const orderRoutes = require("./routes/orderRoutes");
+
+console.log("ORDER ROUTE OBJECT:", orderRoutes);
+
+app.use("/", orderRoutes);
 
 const PORT = 3000;
 
